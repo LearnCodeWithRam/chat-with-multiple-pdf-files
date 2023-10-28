@@ -80,7 +80,7 @@ def main():
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
 
-    st.header("PDF Summerizer ChatBot :books:")
+    st.header("PDF Summerizer")
     user_question = st.text_input("Ask a question about your documents:")
     if user_question:
         handle_userinput(user_question)
