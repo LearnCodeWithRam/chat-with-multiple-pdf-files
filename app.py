@@ -71,7 +71,7 @@ def handle_userinput(user_question):
 
 def main():
     load_dotenv(os.environ.get('OPENAI_API_KEY'))
-    st.set_page_config(page_title="Customer Support ChatBot",
+    st.set_page_config(page_title="PDF Summerizer virtual Robot",
                        page_icon=":books:")
     st.write(css, unsafe_allow_html=True)
 
