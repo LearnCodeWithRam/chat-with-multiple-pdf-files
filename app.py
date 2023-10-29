@@ -80,7 +80,17 @@ def main():
         st.session_state.conversation = None
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
-
+        st.title('WebWisdom :blue[Bot] ')
+    st.header('Powered :blue[By]',)
+    st.write('''<style>
+    "<style>.st-emotion-cache-1v0mbdj.e115fcil1 {
+    max-width: 100px;
+    display: flex;
+    } </style>''', unsafe_allow_html=True)
+    image = Image.open('logo.jpeg')
+    new_image = image.resize((400, 200))
+    st.image(image, caption='')
+    st.header('', divider='rainbow')
     st.header("PDF Summerizer")
     user_question = st.text_input("Ask a question about your documents:")
     if user_question:
