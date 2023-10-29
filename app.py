@@ -116,6 +116,6 @@ def main():
                 # create conversation chain
                 st.session_state.conversation = get_conversation_chain(vectorstore)
 
-
+    st.markdown(footer,unsafe_allow_html=True)
 if __name__ == '__main__':
     main()
