@@ -42,3 +42,31 @@ user_template = '''
     <div class="message">{{MSG}}</div>
 </div>
 '''
+
+footer="""<style>
+a:link , a:visited{
+color: blue;
+background-color: transparent;
+text-decoration: underline;
+}
+
+a:hover,  a:active {
+color: red;
+background-color: transparent;
+text-decoration: underline;
+}
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: cyan;
+color: black;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p>Power By with by <a style='display: block; text-align: center;' href="https://www.heflin.dev/" target="_blank">Heflin Stephen Raj S</a></p>
+</div>
+"""
