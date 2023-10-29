@@ -8,7 +8,7 @@ from langchain.vectorstores import FAISS
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
-from htmlTemplates import css, bot_template, user_template
+from htmlTemplates import css, bot_template, user_template, footer
 from langchain.llms import HuggingFaceHub
 from PIL import Image
 from pyngrok import ngrok
