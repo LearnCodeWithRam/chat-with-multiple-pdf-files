@@ -119,4 +119,4 @@ def main():
     
 if __name__ == '__main__':
     main()
-    st.markdown(footer,unsafe_allow_html=True)
+    
