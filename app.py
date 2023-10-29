@@ -92,7 +92,8 @@ def main():
     st.image(image, caption='')
     st.header('', divider='rainbow')
     st.header("PDF Summerizer")
-    user_question = st.text_input("Ask a question about your documents:")
+    #user_question = st.text_input("Ask a question about your documents:")
+    user_question = st.chat_input("Ask a question about your documents and Press Enter button: ", key="user_input")
     if user_question:
         handle_userinput(user_question)
 
