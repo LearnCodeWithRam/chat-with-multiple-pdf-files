@@ -79,7 +79,7 @@ def main():
         st.session_state.conversation = None
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
-        st.title('PageWhisperer :blue[Bot] ')
+    st.title('PageWhisperer :blue[Bot] ')
     st.header('Powered :blue[By]',)
     st.write('''<style>
     "<style>.st-emotion-cache-1v0mbdj.e115fcil1 {
