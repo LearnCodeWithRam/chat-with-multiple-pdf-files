@@ -72,7 +72,7 @@ def handle_userinput(user_question):
 
 def main():
     load_dotenv(os.environ.get('OPENAI_API_KEY'))
-    st.set_page_config(page_title="PDF Summerizer virtual Robot",
+    #st.set_page_config(page_title="PDF Summerizer virtual Robot",
                        page_icon=":books:")
     st.write(css, unsafe_allow_html=True)
 
@@ -80,7 +80,7 @@ def main():
         st.session_state.conversation = None
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
-        st.title('PageWhisper :blue[Bot] ')
+        st.title('PageWhisperer :blue[Bot] ')
     st.header('Powered :blue[By]',)
     st.write('''<style>
     "<style>.st-emotion-cache-1v0mbdj.e115fcil1 {
