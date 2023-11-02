@@ -104,10 +104,6 @@ def main():
         progress_bar1.progress(1)
         status_text1.text(f'Operation in progress. Please wait: {1}%')
         handle_userinput(user_question)
-        for i in range(100):
-            progress_bar1.progress(i + 1)
-            status_text1.text(f'Operation in progress. Please wait: {i + 1}%')
-            time.sleep(0.1)
 
     with st.sidebar:
         my_bar = st.progress(0)
