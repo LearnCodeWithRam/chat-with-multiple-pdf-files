@@ -97,11 +97,11 @@ def main():
     user_question = st.chat_input("Ask a question about your documents and Press Enter button: ", key="user_input")
     if user_question:
         progress_bar1.progress(1)
-        status_text1.text(f'Progress:{1}%')
+        status_text1.text(f'Operation in progress. Please wait: {1}%')
         handle_userinput(user_question)
         for i in range(100):
             progress_bar1.progress(i + 1)
-            status_text1.text(f'Progress: {i + 1}%')
+            status_text1.text(f'Operation in progress. Please wait: {i + 1}%')
             time.sleep(0.1)
 
     with st.sidebar:
@@ -115,23 +115,23 @@ def main():
                 # get pdf text
                 raw_text = get_pdf_text(pdf_docs)
                 my_bar.progress(20)
-                status_text.text(f'Operation in progress. Please wait..: {20}%')
+                status_text.text(f'Operation in progress:{20}%')
                 #st.write(raw_text)
                 # get the text chunks
                 text_chunks = get_text_chunks(raw_text)
                 my_bar.progress(40)
-                status_text.text(f'Operation in progress. Please wait..: {40}%')
+                status_text.text(f'Operation in progress: {40}%')
                 #st.write(text_chunks)
                 # create vector store
                 vectorstore = get_vectorstore(text_chunks)
-                my_bar.progress(60)
-                status_text.text(f'Operation in progress. Please wait..: {60}%')
+                my_bar.progress(70)
+                status_text.text(f'Operation in progress: {70}%')
                 #st.write(vectorstore)
                 st.write("Successfully Done!")
                 # create conversation chain
                 st.session_state.conversation = get_conversation_chain(vectorstore)
-                my_bar.progress(80)
-                status_text.text(f'Operation in progress. Please wait..: {80}%')
+                my_bar.progress(100)
+                status_text.text(f'Operation in progress: {100}%')
     
 if __name__ == '__main__':
     main()
