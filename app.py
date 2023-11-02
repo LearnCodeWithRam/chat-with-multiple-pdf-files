@@ -90,13 +90,23 @@ def main():
     new_image = image.resize((400, 200))
     st.image(image, caption='')
     st.header('', divider='rainbow')
+    progress_bar1 = st.progress(0)
+    status_text1 = st.empty()
     st.header("Search In Your Docs By Entering Your Query Here:")
     #user_question = st.text_input("Ask a question about your documents:")
     user_question = st.chat_input("Ask a question about your documents and Press Enter button: ", key="user_input")
     if user_question:
+        progress_bar.progress(1)
+        status_text.text(f'Progress:{1}%')
         handle_userinput(user_question)
+        for i in range(100):
+            progress_bar.progress(i + 1)
+            status_text.text(f'Progress: {i + 1}%')
+            time.sleep(0.1)
 
     with st.sidebar:
+        progress_bar = st.progress(0)
+        status_text = st.empty()
         st.subheader("Your documents")
         pdf_docs = st.file_uploader(
             "Upload your PDFs here and click on 'Process'", accept_multiple_files=True,type='pdf')
@@ -104,17 +114,24 @@ def main():
             with st.spinner("Processing..."):
                 # get pdf text
                 raw_text = get_pdf_text(pdf_docs)
+                my_bar.progress(20)
+                status_text.text(f'Operation in progress. Please wait..: {20}%')
                 #st.write(raw_text)
                 # get the text chunks
                 text_chunks = get_text_chunks(raw_text)
+                my_bar.progress(40)
+                status_text.text(f'Operation in progress. Please wait..: {40}%')
                 #st.write(text_chunks)
                 # create vector store
                 vectorstore = get_vectorstore(text_chunks)
+                my_bar.progress(60)
+                status_text.text(f'Operation in progress. Please wait..: {60}%')
                 #st.write(vectorstore)
                 st.write("Successfully Done!")
                 # create conversation chain
                 st.session_state.conversation = get_conversation_chain(vectorstore)
-
+                my_bar.progress(80)
+                status_text.text(f'Operation in progress. Please wait..: {80}%')
     
 if __name__ == '__main__':
     main()
