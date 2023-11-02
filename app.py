@@ -96,8 +96,8 @@ def main():
     #user_question = st.text_input("Ask a question about your documents:")
     user_question = st.chat_input("Ask a question about your documents and Press Enter button: ", key="user_input")
     if user_question:
-        progress_bar.progress(1)
-        status_text.text(f'Progress:{1}%')
+        progress_bar1.progress(1)
+        status_text1.text(f'Progress:{1}%')
         handle_userinput(user_question)
         for i in range(100):
             progress_bar1.progress(i + 1)
@@ -105,7 +105,7 @@ def main():
             time.sleep(0.1)
 
     with st.sidebar:
-        progress_bar = st.progress(0)
+        my_bar = st.progress(0)
         status_text = st.empty()
         st.subheader("Your documents")
         pdf_docs = st.file_uploader(
