@@ -59,13 +59,8 @@ def get_conversation_chain(vectorstore):
 
 
 def handle_userinput(user_question):
-    progress_bar1.progress(25)
     response = st.session_state.conversation({'question': user_question})
-    progress_bar1.progress(50)
-    status_text1.text(f'Operation in progress. Please wait: {50}%')
     st.session_state.chat_history = response['chat_history']
-    progress_bar1.progress(100)
-    status_text1.text(f'Operation in progress. Please wait: {100}%')
 
     for i, message in enumerate(st.session_state.chat_history):
         if i % 2 == 0:
