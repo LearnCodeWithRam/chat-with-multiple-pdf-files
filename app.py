@@ -16,7 +16,7 @@ import os
 import time
 #key = os.environ.get('API_Key')
 
-
+progress_bar1 = ""
 def get_pdf_text(pdf_docs):
     text = ""
     for pdf in pdf_docs:
