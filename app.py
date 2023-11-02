@@ -100,8 +100,8 @@ def main():
         status_text.text(f'Progress:{1}%')
         handle_userinput(user_question)
         for i in range(100):
-            progress_bar.progress(i + 1)
-            status_text.text(f'Progress: {i + 1}%')
+            progress_bar1.progress(i + 1)
+            status_text1.text(f'Progress: {i + 1}%')
             time.sleep(0.1)
 
     with st.sidebar:
