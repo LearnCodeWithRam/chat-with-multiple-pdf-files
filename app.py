@@ -97,9 +97,11 @@ def main():
     #user_question = st.text_input("Ask a question about your documents:")
     user_question = st.chat_input("Ask a question about your documents and Press Enter button: ", key="user_input")
     if user_question:
-        progress_bar1.progress(1)
-        status_text1.text(f'Operation in progress. Please wait: {1}%')
+        progress_bar1.progress(10)
+        status_text1.text(f'Operation in progress. Please wait: {10}%')
         handle_userinput(user_question)
+        progress_bar1.progress(100)
+        status_text1.text(f'Operation in progress. Please wait: {100}%')
 
     with st.sidebar:
         my_bar = st.progress(0)
