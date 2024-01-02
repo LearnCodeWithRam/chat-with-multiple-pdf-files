@@ -14,7 +14,7 @@ from PIL import Image
 from pyngrok import ngrok
 import os
 import time
-#key = os.environ.get('API_Key')
+
 
 progress_bar1 = ""
 def get_pdf_text(pdf_docs):
@@ -72,7 +72,7 @@ def handle_userinput(user_question):
 
 
 def main():
-    load_dotenv(os.environ.get('OPENAI_API_KEY'))
+    os.environ["OPENAI_API_KEY"] = "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"
     #st.set_page_config(page_title="PDF Summerizer virtual Robot",page_icon=":books:")
     st.write(css, unsafe_allow_html=True)
 
