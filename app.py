@@ -69,7 +69,13 @@ def handle_userinput(user_question):
         else:
             st.write(bot_template.replace(
                 "{{MSG}}", message.content), unsafe_allow_html=True)
+def init():
 
+    if load_dotenv(os.environ.get('OPENAI_API_KEY')) is None or load_dotenv(os.environ.get('OPENAI_API_KEY')) == "":
+        print("OPENAI_API_KEY is not set")
+        exit(1)
+    else:
+        print("OPENAI_API_KEY is set")
 
 def main():
     os.environ["OPENAI_API_KEY"]
@@ -134,4 +140,5 @@ def main():
     
 if __name__ == '__main__':
     main()
+    init()
     
